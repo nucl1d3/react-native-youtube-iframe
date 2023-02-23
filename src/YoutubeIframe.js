@@ -49,6 +49,7 @@ const YoutubeIframe = (props, ref) => {
     onFullScreenChange = _status => {},
     onPlaybackQualityChange = _quality => {},
     onPlaybackRateChange = _playbackRate => {},
+    onNavigationStateChange = _event => {},
   } = props;
 
   const [playerReady, setPlayerReady] = useState(false);
@@ -274,6 +275,7 @@ const YoutubeIframe = (props, ref) => {
         source={source}
         ref={webViewRef}
         onMessage={onWebMessage}
+        onNavigationStateChange={onNavigationStateChange}
       />
     </View>
   );
